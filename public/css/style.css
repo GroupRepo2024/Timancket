@@ -26,6 +26,7 @@ nav{
 }
 
 nav .logo{
+  flex: auto;
   width: 120px;
   cursor: pointer;
   font-size: 2.5rem;
@@ -65,7 +66,7 @@ button.btn{
   background-color: transparent;
   color: #22446d;
   border: 1px solid transparent;
-  transition: border-color .3s;
+  transition: border-color 0.3s;
 }
 
 button.btn:hover{
@@ -90,15 +91,90 @@ section {
   width: 360px;
   padding: 20px;
   background-color: rgb(0 0 0/35%);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.card.show{
+  visibility: visible;
+  opacity: 1;
 }
 
 .card-header{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 30px 20px 0;
+  margin: 30px 10px 0;
+  margin-top: auto;
   font-size: 1.1rem;
-  color: #5288ca;
-  box-shadow: 2px 3px 8px #3b587b;
+  color: #e0f7fa;
+  box-shadow: 2px 3px 8px #e0f7fa;
+  border-radius: 80px;
+}
+
+.card-header .form-header {
+  flex: 50%;
+  text-align: center;
+  padding: 10px 0;
+  border: 1px solid transparent;
   border-radius: 50px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.card-header .form-header.active {
+  box-shadow: inset 1px 1px 2px rgb(224 247 250 / 55%),
+   inset -1px 1px 2px rgb(224 247 250 / 55%),
+   inset -1px -1px 2px rgb(224 247 250 / 55%),
+   inset -1px -1px 2px rgb(224 247 250 / 55%);
+  border-color: #e0f7fa;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.card-body {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 40px 0;
+  text-align: center;
+}
+
+form {
+  flex: 0 0 100%;
+}
+
+.toggleForm {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.form-control {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgb(224 247 250 / 65%);
+  background: none;
+  outline: none;
+  padding: 10px 5px;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+.form-control::placeholder {
+  color: rgba(224 247 250 / 65%);
+}
+
+.formButton{
+  border: 1px solid transparent;
+  padding: 1rem 3rem;
+  background-color: #22446d;
+  border-radius: 50px;
+  margin-top: 1rem;
+  font-size: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.formButton:hover{
+  box-shadow: 3px 5px 115px #22446d;
+  transform: translateY(-5px);
 }

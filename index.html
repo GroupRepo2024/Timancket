@@ -3,9 +3,6 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="public/css/style.css"/>
-    <link rel="stylesheet" href="public/css/all.css"/>
-    <link rel="stylesheet" href="public/css/brands.css"/>
-    <link rel="stylesheet" href="public/css/header.css"/>
     <title>Timancket</title>
   </head>
   <body>
@@ -27,19 +24,19 @@
             <div class="form-wrapper">
               <div class="card">
                 <div class="card-header">
-                  <div id="forLogin" class="form-header active">Se connecter</div>
-                  <div id="forRegister" class="form-header">S'inscrire</div>
+                  <div id="forClient" class="form-header active">Espace client</div>
+                  <div id="forPro" class="form-header">Espace pro</div>
                 </div>
                 <div id="formContainer" class="card-body">
-                  <form id="formLogin">
-                    <input type="text" class="form-control" placeholder="@utilisateur"/>
-                    <button class="formButton">Connexion</button>
-                  </form>
-                  <form id="formRegister" class="toggleForm">
+                  <form id="formEclient">
                     <input type="text" class="form-control" placeholder="@utilisateur"/>
                     <input type="password" class="form-control" placeholder="@Mot de passe"/>
-                    <input type="password" class="form-control" placeholder="@Confirmer mot de passe">
-                    <button class="formButton">Inscription</button>
+                    <button class="formButton">Connexion</button>
+                  </form>
+                  <form id="formEprofessionnel" class="toggleForm">
+                    <input type="text" class="form-control" placeholder="@utilisateur"/>
+                    <input type="password" class="form-control" placeholder="@Mot de passe"/>
+                    <button class="formButton">Connexion</button>
                   </form>
                 </div>
 
@@ -51,6 +48,43 @@
         </section>
     </div>
     <script>
+        const displayForm = _('displayForm');
+        const forclient = _('forClient');
+        const clientForm = _('formEclient');
+        const forpro = _('forPro');
+        const proForm = _('formEprofessionnel');
+        const formContainer = _('formContainer');
+        displayForm.addEventListener('click', showform);
+
+        forclient.addEventListener('click', () => {
+          forpro.classList.remove('active')
+          forclient.classList.add('active')
+          if(clientForm.classList.contains('toggleForm')){
+            formContainer.style.transform = 'translate(0%)';
+            formContainer.style.transition = 'transform .5s';
+            proForm.classList.add('toggleForm');
+            clientForm.classList.remove('toggleForm');
+          }
+        })
+
+        forpro.addEventListener('click', () => {
+          forclient.classList.remove('active')
+          forpro.classList.add('active')
+          if(proForm.classList.contains('toggleForm')){
+            formContainer.style.transform = 'translate(-100%)';
+            formContainer.style.transition = 'transform .5s';
+            proForm.classList.remove('toggleForm');
+            clientForm.classList.add('toggleForm');
+          }
+        })
+
+        function _(e){
+          return document.getElementById(e);
+        }
+
+        function showform() {
+          document.querySelector('.form-wrapper .card').classList.toggle('show');
+        }
 
     </script>
 
