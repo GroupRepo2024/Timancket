@@ -25,18 +25,50 @@
 
                     switch($err)
                     {
-                        case 'password':
+                        case 'accountPro':
                         ?>
                             <div class="alert alert-danger">
-                                <strong>Erreur</strong> mot de passe incorrect
+                                <strong>Erreur</strong> compte Pro inexistant
                             </div>
                         <?php
                         break;
 
-                        case 'email':
+                        case 'accountClient':
                         ?>
                             <div class="alert alert-danger">
-                                <strong>Erreur</strong> email incorrect
+                                <strong>Erreur</strong> compte client inexistant
+                            </div>
+                        <?php
+                        break;
+
+                        case 'passwordClient':
+                        ?>
+                            <div class="alert alert-danger">
+                                <strong>Erreur</strong> mot de passe Client incorrect
+                            </div>
+                        <?php
+                        break;
+
+                        case 'passwordPro':
+                        ?>
+                            <div class="alert alert-danger">
+                                <strong>Erreur</strong> mot de passe Pro incorrect
+                            </div>
+                        <?php
+                        break;
+
+                        case 'userClient':
+                        ?>
+                            <div class="alert alert-danger">
+                                <strong>Erreur</strong> login user Client incorrect
+                            </div>
+                        <?php
+                        break;
+
+                        case 'userPro':
+                        ?>
+                            <div class="alert alert-danger">
+                                <strong>Erreur</strong> login user Pro incorrect
                             </div>
                         <?php
                         break;
@@ -77,7 +109,7 @@
           </div>
         </section>
     </div>
-    <script src="public/js/Connexion.js"></script>
+    <script src="../js/Connexion.js"></script>
 
   </body>
 </html>

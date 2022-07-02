@@ -1,6 +1,12 @@
 <?php
+
+$host = "localhost";
+$user = "root";
+$database = "WEB_incident_ticket";
+$password = "Rx232vb98@";
+
     try {
-      $bdd = new PDO('mysql:host=localhost;dbname=WEB_incident_ticket;charset=utf8', 'root', 'Rx232vb998@');
+      $bdd = new PDO("mysql:host=$host; dbname=$database", $user, $password);
     }catch(Exception $e){
       die('Erreur'.$e->getMessage());
     }
