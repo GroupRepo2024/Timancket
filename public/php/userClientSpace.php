@@ -19,10 +19,11 @@
     <meta charset="utf-8">
     <title>Espace cliente</title>
     <link rel="stylesheet" href="../css/styleUserClient.css"/>
+    <link rel="stylesheet" href="../libs/bootstrap-5.0.2/dist/css/bootstrap.css"/>
   </head>
   <body>
     <div class="container">
-      <h2> Bienvenue sur l'espace cliente <?php if(is_array($data))echo $data['pseudo']; ?> !</h2>
+      <h2> Bienvenue sur l'espace cliente !</h2>
       <a href="deconnexion.php" class="btn"> Déconnexion </a>
     </div>
   </body>

@@ -20,12 +20,20 @@
   <head>
     <meta charset="utf-8">
     <title>Espace Professionnel</title>
-    <link rel="stylesheet" href="../css/styleUserClient.css"/>
+    <link rel="stylesheet" href="../css/styleUserPro.css"/>
+    <link rel="stylesheet" href="../libs/bootstrap-5.0.2/dist/css/bootstrap.css"/>
   </head>
   <body>
     <div class="container">
-      <h2> Bienvenue sur l'espace Professionnel <?php if(is_array($data))echo $data['pseudo']; ?> !</h2>
-      <a href="deconnexion.php" class="btn"> Déconnexion </a>
+      <nav>
+        <a href="#" class="logo">Timancket</a>
+        <ul>
+          <li>
+              <button class="btn" action="Deconnexion.php" id="displayForm"> Déconnexion </button>
+          </li>
+        </ul>
+      </nav>
+      <h2> Bienvenue sur l'espace Professionnel !</h2>
     </div>
   </body>
 </html>
