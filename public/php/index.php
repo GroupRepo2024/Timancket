@@ -16,6 +16,9 @@
           </li>
         </ul>
       </nav>
+      <div id="titre">
+        <h3  class="titre"> Bienvenue sur Timancket, le service de gestion de Ticket !</h3>
+      </div>
         <section>
           <div class="sec-container">
             <?php

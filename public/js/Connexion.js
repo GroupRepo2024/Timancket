@@ -1,4 +1,5 @@
 let displayForm = _('displayForm');
+let titre = _('titre');
 let forclient = _('forClient');
 let clientForm = _('formEclient');
 let forpro = _('forPro');
@@ -31,8 +32,13 @@ forpro.addEventListener('click', () => {
 
 function _(e){
   return document.getElementById(e);
-}
+};
 
 function showform() {
   document.querySelector('.form-wrapper .card').classList.toggle('show');
-}
+  if(getComputedStyle(titre).display != "none"){
+    titre.style.display="none";
+  }else{
+    titre.style.display="block";
+  }
+};
