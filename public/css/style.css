@@ -8,22 +8,27 @@
   outline: none;
 }
 
+body {
+  background: radial-gradient(ellipse at top, #d3b7f2, transparent), radial-gradient(ellipse at bottom, #3e7cac, transparent);
+  /* background-color: #d3b7f2; */
+}
+
 .container {
   position: relative;
   height: 100vh;
-  width: 100%;
+  width: 80%;
   padding: 0 8%;
-  background: linear-gradient(rgba(255, 255, 255, 0.4), transparent), url('../img/support-it.jpg') center center no-repeat;
+  /* background: linear-gradient(rgba(255, 255, 255, 0.4), transparent), url('../img/support-it.jpg') center center no-repeat; */
   background-size: cover;
 }
 
-nav{
+/* nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
   padding: 5px 0;
-}
+} */
 
 nav .logo{
   flex: auto;
@@ -58,13 +63,13 @@ nav ul li a {
 }
 
 h3 .titre {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
-  left: 50%;
+  left: 50%; */
   transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
-  font-size: 32px;
-  color: blanchedalmond;
-  font-family: "fira-sans", comic sans ms;
+  font-size: 20px;
+  color: #d3b7f2;
+  /* font-family: "fira-sans", comic sans ms; */
 }
 
 button.btn{
