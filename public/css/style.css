@@ -9,7 +9,7 @@
 }
 
 body {
-  background: radial-gradient(ellipse at top, #d3b7f2, transparent), radial-gradient(ellipse at bottom, #3e7cac, transparent);
+  background: radial-gradient(ellipse at top, #c9c2e1, transparent), radial-gradient(ellipse at bottom, #97d0b0, transparent);
   /* background-color: #d3b7f2; */
 }
 
@@ -37,7 +37,7 @@ nav .logo{
   font-style: oblique;
   font-weight: bold;
   text-decoration: none;
-  color: #22446d;
+  color: #f05c4e;
 }
 
 nav ul{
@@ -65,9 +65,10 @@ h3 .titre {
   /* position: absolute;
   top: 50%;
   left: 50%; */
-  transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
-  font-size: 20px;
-  color: #d3b7f2;
+  /* transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+  /* font-size: 20px; */ 
+  color: #c9c2e1; 
+  font-size: 25px;
   /* font-family: "fira-sans", comic sans ms; */
 }
 
@@ -84,7 +85,7 @@ button.btn{
 }
 
 button.btn:hover{
-  border-color: #22446d;
+  border-color: #292965;
 }
 
 section {
@@ -181,7 +182,7 @@ form {
 .formButton{
   border: 1px solid transparent;
   padding: 1rem 3rem;
-  background-color: #22446d;
+  background-color: #292965;
   border-radius: 50px;
   margin-top: 1rem;
   font-size: 1rem;
@@ -189,6 +190,41 @@ form {
 }
 
 .formButton:hover{
-  box-shadow: 3px 5px 115px #22446d;
+  box-shadow: 3px 5px 115px #292965;
   transform: translateY(-5px);
+}
+
+.btn-deconnexion {
+	background-color: #292965;
+	border: none;
+	color: white;
+	border-radius: 6px;
+	transition: ease-out 0.3s;
+	outline: none;
+	border: 2px solid white;
+	position: relative;
+	z-index: 1;
+	height: 35px; 
+	width: 100px;
+}
+.btn-deconnexion:hover {
+	color: #292965;
+}
+.btn-deconnexion:before {
+	transition: 0.5s all ease;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	right: 50%;
+	bottom: 0;
+	opacity: 0;
+	content: "";
+	background-color: #E7E7E8;
+}
+.btn-deconnexion:hover:before {
+	transition: 0.5s all ease;
+	left: 0;
+	right: 0;
+	opacity: 1;
+	z-index: -1;
 }
