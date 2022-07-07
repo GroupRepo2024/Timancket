@@ -6,7 +6,7 @@
     $userClient =  htmlspecialchars($_POST['userClient']);
     $passwordClient = htmlspecialchars($_POST['passwordClient']);
 
-    $check = $bdd->prepare("SELECT pseudo, email, password, rôle FROM UserAccount WHERE pseudo = ? OR email = ? AND rôle = 'C'");
+    $check = $bdd->prepare("SELECT pseudo, email, password, rôle FROM useraccount WHERE pseudo = ? OR email = ? AND rôle = 'C'");
     $check->execute(array($userClient, $userClient));
     $data = $check->fetch();
     $row = $check->rowCount();
@@ -27,7 +27,7 @@
     $userPro =  htmlspecialchars($_POST['userPro']);
     $passwordPro = htmlspecialchars($_POST['passwordPro']);
 
-    $check = $bdd->prepare("SELECT pseudo, email, password, rôle FROM UserAccount WHERE pseudo = ? OR email = ? AND rôle = 'P'");
+    $check = $bdd->prepare("SELECT pseudo, email, password, rôle FROM useraccount WHERE pseudo = ? OR email = ? AND rôle = 'P'");
     $check->execute(array($userPro,$userPro));
     $data = $check->fetch();
     $row = $check->rowCount();

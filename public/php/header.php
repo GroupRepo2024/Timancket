@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Tickets</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../libs/bootstrap-5.0.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/style.css" />
 </head>
 
@@ -13,6 +13,9 @@
     <nav class="navbar" style="background-color: #163561;">
         <div class="container-fluid">
             <a href="#" class="logo text-info">Timancket</a>
+            <div id="titre">
+                <h3 class="titre text-light"> Bienvenue sur Timancket, le service de gestion de Ticket !</h3>
+            </div>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -28,9 +31,7 @@
                 <a class="btn btn-outline-info" href="inscription.php">S'inscrire</a>
             </div>
         </div>
-        <div id="titre">
-            <h3 class="titre text-light"> Bienvenue sur Timancket, le service de gestion de Ticket !</h3>
-        </div>
+
     </nav>
 
     <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-nav">

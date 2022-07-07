@@ -10,7 +10,7 @@
 
   // On récupère les données de l'utilisateur
 
-  $req = $bdd->prepare('SELECT pseudo,token FROM UserAccount WHERE token = ?');
+  $req = $bdd->prepare('SELECT pseudo,token FROM useraccount WHERE token = ?');
   $req->execute(array($_SESSION['user']));
   $data = $req->fetch();
 

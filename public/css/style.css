@@ -31,7 +31,6 @@ body {
 } */
 
 nav .logo{
-  flex: auto;
   width: 120px;
   cursor: pointer;
   font-size: 2.5rem;
