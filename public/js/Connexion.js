@@ -6,7 +6,7 @@ let forpro = _('forPro');
 let proForm = _('formEprofessionnel');
 let formContainer = _('formContainer');
 
-displayForm.addEventListener('click', showform);
+window.addEventListener('load', showform);
 
 forclient.addEventListener('click', () => {
   forpro.classList.remove('active')
@@ -36,9 +36,4 @@ function _(e){
 
 function showform() {
   document.querySelector('.form-wrapper .card').classList.toggle('show');
-  if(getComputedStyle(titre).display != "none"){
-    titre.style.display="none";
-  }else{
-    titre.style.display="block";
-  }
 };

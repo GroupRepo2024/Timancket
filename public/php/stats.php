@@ -1,7 +1,9 @@
 <?php
+session_start();
+require_once 'config.php'; // ajout connexion bcadd
 include 'navbar.php';
+// si la session existe pas soit si l'on est pas connecté on redirige
 
-require_once('config.php');
 
 $query = "select nom, count(*) as nombre from traiter group by nom";
 $step = $bdd->prepare($query);
@@ -66,6 +68,7 @@ if ($step->execute()) {
 				chart.draw(data, options)
 			}
 		</script>
+    </div>
 
 </body>
 

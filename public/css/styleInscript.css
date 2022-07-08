@@ -8,6 +8,11 @@
   outline: none;
 }
 
+body {
+  background: radial-gradient(ellipse at top, #c9c2e1, transparent), radial-gradient(ellipse at bottom, #97d0b0, transparent);
+  /* background-color: #d3b7f2; */
+}
+
 .container {
   position: relative;
   height: 100vh;
@@ -71,7 +76,7 @@ nav ul li a:hover{
 }
 
 .form-wrapper .card{
-  width: 360px;
+  width: 400px;
   padding: 20px;
   background-color: rgb(0 0 0/35%);
 }
@@ -113,8 +118,9 @@ form {
 .formButton{
   border: 1px solid transparent;
   padding: 1rem 3rem;
-  background-color: #22446d;
-  border-radius: 50px;
+  background-color: #292965;
+  border-radius: 30px;
+  color: whitesmoke;
   margin-top: 1rem;
   font-size: 1rem;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -123,4 +129,17 @@ form {
 .formButton:hover{
   box-shadow: 3px 5px 115px #22446d;
   transform: translateY(-5px);
+}
+
+.accueilbtn {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0;
+  background-color: transparent;
+  color: #f05c4ec2;
+  border: 1px solid transparent;
+  transition: border-color 0.3s;
+  cursor:pointer;
 }

@@ -1,7 +1,12 @@
 <?php
+session_start();
+require_once 'config.php'; // ajout connexion bcadd
 include 'navbar.php';
+// si la session existe pas soit si l'on est pas connecté on redirige
 
-require_once('config.php');
+
+
+
 $requete = $bdd->query('SELECT id, nom, description, chef_du_projet, date_debut, date_fin FROM projet;');
 $requete->execute();
 $resultats = $requete->fetchAll();

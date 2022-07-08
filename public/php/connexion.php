@@ -16,7 +16,7 @@ if (isset($_POST['userClient']) && isset($_POST['passwordClient'])) {
 			if (password_verify($passwordClient, $data['password'])) {
 				if ($data['rôle'] == 'C' || $data['rôle'] == 'A') {
 					$_SESSION['user'] = $data['pseudo'];
-					header('Location:userClientSpace.php');
+					header('Location:client.php');
 				} else header('Location:index.php?login_err=accountClient');
 			} else header('Location:index.php?login_err=passwordClient');
 		} else header('Location:index.php?login_err=userClient');
@@ -35,7 +35,7 @@ if (isset($_POST['userClient']) && isset($_POST['passwordClient'])) {
 			if (password_verify($passwordPro, $data['password'])) {
 				if ($data['rôle'] == 'P' || $data['rôle'] == 'A') {
 					$_SESSION['user'] = $data['pseudo'];
-					header('Location:userProSpace.php');
+					header('Location:ticket.php');
 				} else header('Location:index.php?login_err=accountPro');
 			} else header('Location:index.php?login_err=passwordPro');
 		} else header('Location:index.php?login_err=userPro');

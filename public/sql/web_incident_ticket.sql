@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 07 juil. 2022 à 10:08
+-- Généré le : ven. 08 juil. 2022 à 08:16
 -- Version du serveur : 5.7.36
 -- Version de PHP : 7.4.26
 
@@ -29,22 +29,22 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `projet`;
 CREATE TABLE IF NOT EXISTS `projet` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `nom` text NOT NULL,
-  `description` text NOT NULL,
-  `chef_du_projet` text NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` text COLLATE utf8_bin NOT NULL,
+  `description` text COLLATE utf8_bin NOT NULL,
+  `chef_du_projet` text COLLATE utf8_bin NOT NULL,
   `date_debut` date NOT NULL,
   `date_fin` date NOT NULL,
   PRIMARY KEY (`id`)
-) AUTO_INCREMENT=3;
+);
 
 --
 -- Déchargement des données de la table `projet`
 --
 
 INSERT INTO `projet` (`id`, `nom`, `description`, `chef_du_projet`, `date_debut`, `date_fin`) VALUES
-(1, 'AVA', 'application qui permet de créer des tickets', 'Michel Florantin', '2022-07-06', '2023-07-06'),
-(2, 'App recette', 'Application qui aide à trouver des recettes et les cuisiner', 'Raymond Ballo', '2021-10-05', '2022-12-25');
+(1, 'AVA', 'application qui permet de creer des tickets', 'michel', '2022-07-06', '2023-07-06'),
+(2, 'App recette', 'Application qui aide a trouver des recettes et les cuisiner', 'raymond', '2021-10-05', '2022-12-25');
 
 -- --------------------------------------------------------
 
@@ -54,12 +54,12 @@ INSERT INTO `projet` (`id`, `nom`, `description`, `chef_du_projet`, `date_debut`
 
 DROP TABLE IF EXISTS `ticket`;
 CREATE TABLE IF NOT EXISTS `ticket` (
-  `id` int(3) NOT NULL,
-  `titre` varchar(50) NOT NULL,
-  `description` varchar(500) NOT NULL,
-  `priorite` varchar(20) NOT NULL,
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `titre` varchar(150) COLLATE utf8_bin NOT NULL,
+  `description` varchar(500) COLLATE utf8_bin NOT NULL,
+  `priorite` varchar(20) COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) AUTO_INCREMENT=5;
+);
 
 --
 -- Déchargement des données de la table `ticket`
@@ -69,7 +69,8 @@ INSERT INTO `ticket` (`id`, `titre`, `description`, `priorite`) VALUES
 (1, 'Reglage de la navbar dans Timancket', 'La navbar n\'est pas bien implemente, il faudrait penser a l\'arranger, merci.', 'moyen'),
 (2, 'Changement background', 'Changer le background car il ne correspond pas a ce qui etait mis dans la conception du projet.', 'faible'),
 (3, 'Creation d\'un onglet statistique', 'Il faut un onglet statistique avec les statistiques suivantes : nombre de tickets crees par mois et par rapporteur, nombre de tickets traites par mois et par developpeur, et autres statistiques inutiles.', 'eleve'),
-(4, 'Fixer l\'utilisation des boutons', 'Impossible d\'utiliser les boutons de la navbar, urgent !!!', 'critique');
+(4, 'Fixer l\'utilisation des boutons', 'Impossible d\'utiliser les boutons de la navbar, urgent !!!', 'critique'),
+(9, 'Donner une bonne note au developpeur Michel Florantin', 'Pour des raisons evidentes :)', 'critique');
 
 -- --------------------------------------------------------
 
@@ -80,9 +81,9 @@ INSERT INTO `ticket` (`id`, `titre`, `description`, `priorite`) VALUES
 DROP TABLE IF EXISTS `traiter`;
 CREATE TABLE IF NOT EXISTS `traiter` (
   `id` int(3) NOT NULL AUTO_INCREMENT,
-  `nom` enum('michel','raymond','marwane') NOT NULL,
+  `nom` enum('michel','raymond','marwane') COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`)
-) AUTO_INCREMENT=36;
+);
 
 --
 -- Déchargement des données de la table `traiter`
@@ -120,7 +121,16 @@ INSERT INTO `traiter` (`id`, `nom`) VALUES
 (29, 'raymond'),
 (30, 'raymond'),
 (31, 'raymond'),
-(32, 'michel');
+(32, 'michel'),
+(36, 'michel'),
+(37, 'raymond'),
+(38, 'michel'),
+(39, 'michel'),
+(40, 'michel'),
+(41, 'raymond'),
+(42, 'raymond'),
+(43, 'michel'),
+(44, 'michel');
 
 -- --------------------------------------------------------
 
@@ -131,15 +141,15 @@ INSERT INTO `traiter` (`id`, `nom`) VALUES
 DROP TABLE IF EXISTS `useraccount`;
 CREATE TABLE IF NOT EXISTS `useraccount` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pseudo` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` text NOT NULL,
-  `ip` varchar(20) NOT NULL,
-  `token` text NOT NULL,
-  `rôle` enum('A','C','P') NOT NULL,
+  `pseudo` varchar(100) COLLATE utf8_bin NOT NULL,
+  `email` varchar(100) COLLATE utf8_bin NOT NULL,
+  `password` text COLLATE utf8_bin NOT NULL,
+  `ip` varchar(20) COLLATE utf8_bin NOT NULL,
+  `token` text COLLATE utf8_bin NOT NULL,
+  `rôle` enum('A','C','P') COLLATE utf8_bin NOT NULL,
   `date_d'inscription` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) AUTO_INCREMENT=8;
+);
 
 --
 -- Déchargement des données de la table `useraccount`
